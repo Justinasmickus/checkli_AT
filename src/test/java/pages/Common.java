@@ -2,7 +2,12 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Driver;
+
+import java.time.Duration;
 
 public class Common {
 
@@ -21,5 +26,12 @@ public class Common {
     public static String getElementText(By locator){
         return getElement(locator).getText();
     }
+
+    public static void waitForElementToBeVisible(By locator){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+
 
 }
