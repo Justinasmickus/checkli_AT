@@ -1,0 +1,1 @@
+# Checkli automation testing
