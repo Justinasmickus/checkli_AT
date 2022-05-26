@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Driver;
@@ -10,6 +10,10 @@ import utils.Driver;
 import java.time.Duration;
 
 public class Common {
+
+    public static boolean isElementDisplayed(By locator){
+      return   Driver.getDriver().findElement(locator).isDisplayed();
+    }
 
     public static void openUrl(String url) {
         Driver.getDriver().get(url);
@@ -30,6 +34,16 @@ public class Common {
     public static void waitForElementToBeVisible(By locator){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    public static void hover(By locator) {
+        WebElement element = getElement(locator);
+
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(element);
+        action.perform();
+    }
+    public static void refresh(){
+       Driver.getDriver().navigate().refresh();
     }
 
 
