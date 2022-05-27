@@ -1,10 +1,11 @@
 package tests.checkli;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import tests.BaseTest;
+
+import static pages.Constants.USERNAME;
 
 public class RegisterWithInvalidFields extends BaseTest {
     @BeforeMethod
@@ -17,7 +18,6 @@ public class RegisterWithInvalidFields extends BaseTest {
 
     @Test
     public void emptyInputFields(){
-
 
         pages.checkli.RegisterWithInvalidFields.enterName("");
         pages.checkli.RegisterWithInvalidFields.enterEmail("");
@@ -34,9 +34,9 @@ public class RegisterWithInvalidFields extends BaseTest {
     @Test
     public void existingUserEmail(){
         String expectedErrorMessage = "The email has already been taken.";
-        pages.checkli.RegisterWithInvalidFields.enterName("asdasd");
-        pages.checkli.RegisterWithInvalidFields.enterEmail("testuotojs@gmail.com");
-        pages.checkli.RegisterWithInvalidFields.enterPassword("asdasdasd");
+        pages.checkli.RegisterWithInvalidFields.enterName("Testuotojas Jonas");
+        pages.checkli.RegisterWithInvalidFields.enterEmail(USERNAME);
+        pages.checkli.RegisterWithInvalidFields.enterPassword("Jonas geriausias");
         pages.checkli.RegisterWithInvalidFields.checkTerms();
 
         pages.checkli.RegisterWithInvalidFields.clickRegisterButton();

@@ -51,7 +51,7 @@ public class Login extends BaseTest {
     @Test
     public void logout() {
         pages.checkli.Login.pressSignIn();
-        pages.checkli.Login.enterLoginCredentials("testuotojs@gmail.com", "labasvakaras");
+        pages.checkli.Login.enterLoginCredentials(USERNAME,  PASSWORD);
         pages.checkli.Login.submitLoginCredentials();
 
         pages.checkli.Login.pressLogout();

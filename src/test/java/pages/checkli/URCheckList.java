@@ -45,24 +45,8 @@ public class URCheckList {
         Common.waitForElementToBeVisible(Locators.Checkli.Unregistered.taskFieldtext);
     }
 
-//    public static void waitForElements() {
-//        Common.waitForElementToBeVisible(Locators.Checkli.Unregistered.contentBorder);
-//    }
-
-//    public static void waitForInputElement() {
-//        Common.waitForElementToBeVisible(Locators.Checkli.Unregistered.textFieldAreaDescription);
-//    }
 
     public static String readText() {
         return Common.getElementText(Locators.Checkli.Unregistered.taskFieldtext);
     }
-
-    public static void clickOnTask() {
-//        Common.waitForElementToBeVisible(Locators.Checkli.Unregistered.fieldEnteredTask);
-        Common.clickElement(Locators.Checkli.Unregistered.fieldEnteredTask);
-    }
-
-//    public static void waitForTaskElement() {
-//        Common.waitForElementToBeVisible(Locators.Checkli.Unregistered.taskFieldtext);
-//    }
 }

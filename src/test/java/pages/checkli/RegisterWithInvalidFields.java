@@ -48,7 +48,4 @@ public class RegisterWithInvalidFields {
       return   Common.getElementText(Locators.Checkli.Registrer.fieldErrorText);
     }
 
-//    public static void waitForRegisterForm() {
-//        Common.waitForElementToBeVisible(Locators.Checkli.Registrer.registerContainer);
-//    }
 }
